@@ -4,6 +4,9 @@ BDDCommon/CommonFunctions/__init__.py
 BDDCommon/CommonFunctions/webcommon.py
 BDDCommon/CommonSteps/__init__.py
 BDDCommon/CommonSteps/webstepscommon.py
+BDDCommon/Configs/__init__.py
+BDDCommon/Configs/configs.py
+BDDCommon/Configs/nav_bars_configs.py
 PythonBDDtutorial.egg-info/PKG-INFO
 PythonBDDtutorial.egg-info/SOURCES.txt
 PythonBDDtutorial.egg-info/dependency_links.txt

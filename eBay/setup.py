@@ -8,6 +8,8 @@ setup(name='PythonBDDtutorial',
       packages=[
           'BDDCommon',
           'BDDCommon.CommonFunctions',
-          'BDDCommon.CommonSteps'],
+          'BDDCommon.CommonSteps',
+          'BDDCommon.Configs',
+      ],
 
       )

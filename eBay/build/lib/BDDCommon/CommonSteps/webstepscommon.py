@@ -1,19 +1,22 @@
+
 from behave import given, when, then
-
 from BDDCommon.CommonFunctions import webcommon
+from BDDCommon.Configs import configs
 
 
-@given(u'go to the site "{url}"')
-def go_to_url(context, url):
+@given(u'go to the site "{website}"')
+def go_to_url(context, website):
+    url = configs.URL_CONFIG.get(website)
     print(f"Navigate to the site: {url}")
     context.driver = webcommon.go_to(url)
 
 
 @then(u'Verify the title should be "{expected_title}"')
 def verify_title(context, expected_title):
-    assert webcommon.assert_page_title(context.driver.title, expected_title)
+    webcommon.assert_page_title(context, expected_title)
 
 
 @then(u'Verify the url should be "{expected_url}"')
 def verify_title(context, expected_url):
-    assert webcommon.assert_current_url(context.driver.url, expected_url)
+
+    webcommon.assert_current_url(context, expected_url)

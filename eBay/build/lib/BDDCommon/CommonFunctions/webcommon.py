@@ -1,5 +1,6 @@
 from selenium import webdriver
-from behave import given, when, then
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
 
 
 def go_to(url, browser_type=None):
@@ -9,7 +10,7 @@ def go_to(url, browser_type=None):
     :return url:
     """
     if not browser_type:
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(ChromeDriverManager().install())
 
     elif browser_type.lower() == "firefox":
         driver = webdriver.Firefox()
@@ -23,6 +24,7 @@ def go_to(url, browser_type=None):
     return driver
 
 
+# ====================================================================
 def assert_page_title(context, expected_page_title):
     """
     Function to check if title is same as expected
@@ -30,15 +32,17 @@ def assert_page_title(context, expected_page_title):
     :param expected_page_title:
     :return:
     """
-
+    # import pdb;
+    # pdb.set_trace()
     actual_title = context.driver.title
 
     print("Actual title is : ", actual_title)
     print("Expected title is : ", expected_page_title)
 
-    assert expected_page_title == actual_title, "Title is not the same as expected."
+    assert actual_title == expected_page_title, "Title is not the same as expected."
 
 
+# ====================================================================
 def assert_current_url(context, expected_current_url):
     """
     Function to check if title is same as expected
@@ -52,7 +56,38 @@ def assert_current_url(context, expected_current_url):
     if not expected_current_url.startswith("http") or not expected_current_url.startswith("https"):
         expected_current_url = "https://" + expected_current_url + "/"
 
-    print("Actual title is : ", actual_current_url)
-    print("Expected title is : ", expected_current_url)
+    print("Actual URL is : ", actual_current_url)
+    print("Expected URL is : ", expected_current_url)
 
     assert expected_current_url == actual_current_url, "URL is not the same as expected."
+
+
+# ====================================================================
+def element_isVisible(element):
+    if element.is_displayed():
+        return True
+    else:
+        return False
+
+
+# ===========================================================================
+
+def find_element(context, locator_attribute, locator_value):
+    possible_attributes = ["id", "xpath", "link text", "partial link text",
+                           "name", "tag name", "class name", "css selector"]
+    if locator_attribute not in possible_attributes:
+        raise Exception("No Attribute Found.")
+
+    else:
+        try:
+            element = context.driver.find_element(locator_attribute, locator_value)
+            return element
+        except:
+            raise Exception
+
+
+def assert_element_visible(element):
+    if not element.is_displayed():
+        raise AssertionError("Element not Displayed")
+    else:
+        print("Element Found")

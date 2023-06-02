@@ -1,0 +1,15 @@
+setup.py
+BDDCommon/__init__.py
+BDDCommon/CommonFunctions/__init__.py
+BDDCommon/CommonFunctions/webcommon.py
+BDDCommon/CommonSteps/__init__.py
+BDDCommon/CommonSteps/webstepscommon.py
+BDDCommon/Configs/__init__.py
+BDDCommon/Configs/configs.py
+BDDCommon/Configs/nav_bars_configs.py
+BDDPractice.egg-info/PKG-INFO
+BDDPractice.egg-info/SOURCES.txt
+BDDPractice.egg-info/dependency_links.txt
+BDDPractice.egg-info/top_level.txt
+tests/frontend/__init__.py
+tests/frontend/MyAccountPage/__init__.py

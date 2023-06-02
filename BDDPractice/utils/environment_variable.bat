@@ -1,0 +1,7 @@
+
+
+set WC_CUSTOMER_KEY=ck_5db083dd7c9db95401c95d84fbe9e0ab3cdf3a34
+set WC_CUSTOMER_SECRET=cs_ba8b3436b191971d02e7c1fa970714fd7a12147a
+
+set DB_USER=root
+set DB_PASSWORD=root
