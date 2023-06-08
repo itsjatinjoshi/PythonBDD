@@ -12,7 +12,7 @@ class DBHelper(object):
         self.db_password = cred['db_password']
 
     def create_connection(self):
-        self.connection = pymysql.connect(host=self.host, user=self.db_user, password=self.db_password, port=3306)
+        self.connection = pymysql.connect(host=self.host, user=self.db_user, password=self.db_password, port=10006)
 
     def execute_select(self, sql):
         try:

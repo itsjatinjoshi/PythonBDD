@@ -18,7 +18,7 @@ def send_login_email(context, email):
     email_locator_type = MY_ACCOUNT_LOCATORS['LOGIN_FIELD']['type']
     email_locator_text = MY_ACCOUNT_LOCATORS['LOGIN_FIELD']['locator']
     webcommon.type_into_element(context, email, email_locator_type, email_locator_text)
-    time.sleep(2)
+
 
 
 @step('I type "{password}" to the login form')
@@ -31,7 +31,6 @@ def send_login_password(context, password):
     pswd_locator_type = MY_ACCOUNT_LOCATORS['PSWD_FIELD']['type']
     pswd_locator_text = MY_ACCOUNT_LOCATORS['PSWD_FIELD']['locator']
     webcommon.type_into_element(context, password, pswd_locator_type, pswd_locator_text)
-    time.sleep(2)
 
 
 @step('I click on "{button_name}" button')
@@ -46,7 +45,6 @@ def click_login_button(context, button_name):
 
 @step('user should be logged in')
 def verify_user_login(context):
-    time.sleep(5)
     left_nav_bar_type = MY_ACCOUNT_LOCATORS['LEFT_NAV']['type']
     left_nav_bar_locator = MY_ACCOUNT_LOCATORS['LEFT_NAV']['locator']
 

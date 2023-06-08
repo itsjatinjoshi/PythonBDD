@@ -7,7 +7,6 @@ def get_all_products_api():
     per_page = 1
     while per_page <= max_pages:
 
-
         param = {"per_page": 100, "page": per_page}
         response = WooRequestHelper().get(wc_end_point="products", params=param)
 
@@ -19,6 +18,7 @@ def get_all_products_api():
             break
 
     return all_products
+
 
 def get_product_by_id(product_id):
     response = WooRequestHelper().get(wc_end_point=f"products/{product_id}")

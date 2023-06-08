@@ -14,6 +14,9 @@ MY_ACCOUNT_LOCATORS = {
     "LOGIN_BTN": {'type': 'css selector', 'locator': 'button[name="login"]'},
     "LEFT_NAV": {'type': 'xpath', 'locator': "//*[@id='post-9']/div/div/nav/ul"},
     "LOGOUT_LINK": {'type': 'xpath', 'locator': "//*[@id='post-9']/div/div/nav/ul/li[6]/a"},
-    "WRONG_PSWD": {'type':'xpath', 'locator': '//*[@id="content"]/div/div[1]/ul/li'},
-    "WRONG_EMAIL": {'type':'xpath', 'locator': '//*[@id="content"]/div/div[1]/ul/li'},
+    "WRONG_PSWD": {'type': 'xpath', 'locator': '//*[@id="content"]/div/div[1]/ul/li'},
+    "WRONG_EMAIL": {'type': 'xpath', 'locator': '//*[@id="content"]/div/div[1]/ul/li'},
 }
+
+
+

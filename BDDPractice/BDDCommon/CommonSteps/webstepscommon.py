@@ -11,6 +11,7 @@ def go_to_url(context, website):
     context.driver = webcommon.go_to(context, website)
 
 
+@step('Verify the title should be "{expected_title}"')
 @then(u'Verify the title should be "{expected_title}"')
 def verify_title(context, expected_title):
     webcommon.assert_page_title(context, expected_title)

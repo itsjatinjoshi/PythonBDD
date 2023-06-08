@@ -4,3 +4,4 @@ setuptools~=41.2.0
 tweepy~=4.14.0
 PyMySQL~=1.0.3
 WooCommerce~=3.0.0
+webdrivermanager~=0.10.0
